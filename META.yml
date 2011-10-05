@@ -20,11 +20,11 @@ name: Dist-Zilla-PluginBundle-LEONT-PP
 requires:
   Dist::Zilla: 0
   Dist::Zilla::PluginBundle::Basic: 0
-  Dist::Zilla::PluginBundle::LEONT::Base: 0
+  Dist::Zilla::PluginBundle::LEONT::Base: 0.004
   Dist::Zilla::Role::PluginBundle::Easy: 0
   Moose: 0
   perl: 5.006
 resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-LEONT-PP
   repository: git://github.com/Leont/dist-zilla-pluginbundle-LEONT-PP.git
-version: 0.001
+version: 0.002

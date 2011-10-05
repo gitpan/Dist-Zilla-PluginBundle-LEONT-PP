@@ -28,11 +28,11 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla" => 0,
     "Dist::Zilla::PluginBundle::Basic" => 0,
-    "Dist::Zilla::PluginBundle::LEONT::Base" => 0,
+    "Dist::Zilla::PluginBundle::LEONT::Base" => "0.004",
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "Moose" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -1,18 +1,17 @@
 package Dist::Zilla::PluginBundle::LEONT::PP;
 {
-  $Dist::Zilla::PluginBundle::LEONT::PP::VERSION = '0.001';
+  $Dist::Zilla::PluginBundle::LEONT::PP::VERSION = '0.002';
 }
 
 use Moose;
 use Dist::Zilla;
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
-my @bundles = qw/Basic LEONT::Base/;
-
 sub configure {
 	my $self = shift;
 
-	$self->add_bundle("\@$_") for @bundles;
+	$self->add_bundle('@Basic');
+	$self->add_bundle('@LEONT::Base', $self->config_slice('skip_kwalitee'));
 	return;
 }
 
@@ -28,7 +27,7 @@ Dist::Zilla::PluginBundle::LEONT::PP - Plugins LeonT uses for pure perl modules
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

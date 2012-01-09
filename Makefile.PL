@@ -26,13 +26,12 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::PluginBundle::LEONT::PP",
   "PREREQ_PM" => {
-    "Dist::Zilla" => 0,
-    "Dist::Zilla::PluginBundle::Basic" => 0,
-    "Dist::Zilla::PluginBundle::LEONT::Base" => "0.004",
+    "Dist::Zilla::PluginBundle::LEONT::Base" => 0,
+    "Dist::Zilla::Role::PluginBundle::Config::Slicer" => 0,
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "Moose" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

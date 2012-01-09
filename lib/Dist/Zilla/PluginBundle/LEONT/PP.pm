@@ -1,21 +1,25 @@
 package Dist::Zilla::PluginBundle::LEONT::PP;
 {
-  $Dist::Zilla::PluginBundle::LEONT::PP::VERSION = '0.002';
+  $Dist::Zilla::PluginBundle::LEONT::PP::VERSION = '0.003';
 }
 
 use Moose;
-use Dist::Zilla;
-with 'Dist::Zilla::Role::PluginBundle::Easy';
+extends 'Dist::Zilla::PluginBundle::LEONT::Base';
+with qw/Dist::Zilla::Role::PluginBundle::Easy Dist::Zilla::Role::PluginBundle::Config::Slicer/;
+
+my @basic = qw/GatherDir PruneCruft ManifestSkip MetaYAML License Readme ExtraTests ExecDir ShareDir Manifest TestRelease ConfirmRelease UploadToCPAN MakeMaker/;
 
 sub configure {
 	my $self = shift;
 
-	$self->add_bundle('@Basic');
-	$self->add_bundle('@LEONT::Base', $self->config_slice('skip_kwalitee'));
+	$self->add_plugins(@basic);
+	$self->SUPER::configure;
 	return;
 }
 
 1;
+
+#ABSTRACT: Plugins LeonT uses for pure perl modules
 
 
 
@@ -27,14 +31,14 @@ Dist::Zilla::PluginBundle::LEONT::PP - Plugins LeonT uses for pure perl modules
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
 This is identical to the following setup:
 
     [@Basic]
-	[@LEONT::Base]
+    [@LEONT::Base]
 
 =for Pod::Coverage configure
 
@@ -53,7 +57,5 @@ the same terms as the Perl 5 programming language system itself.
 
 
 __END__
-
-#ABSTRACT: Plugins LeonT uses for pure perl modules
 
 

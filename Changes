@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-LEONT-PP
 
+0.003     2012-01-09 23:25:53 Europe/Amsterdam
+          Added Dist::Zilla::Role::PluginBundle::Config::Slicer support
+          Refactored code to inherit from @LEONT::Base
+
 0.002     2011-10-05 18:19:58 Europe/Amsterdam
           Added skip_kwalitee option
 
